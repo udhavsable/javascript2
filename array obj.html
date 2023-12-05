@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <ul id="List1">
+           
+        </ul>
+        <ol id="List2">
+
+        </ol>
+
+
+
+        <h2>JavaScript Arrays</h2>
+        <p>The Array.some() method checks if any of the elements in an array pass a test (provided as a function).</p>
+        <p id="demo"></p>
+
+
+
+
+      <script>  
+        let arr1=["pune","mumbai","delhi","hydrabad","banglore"]
+        let arr2=["AAA","BBB","CCC","DDD","EEE"]
+        let arr3=[23,45,67,89,12,35,56]
+        document.write(arr1[0]+"<br>")
+        document.write(arr1+"<br>")
+        arr1.map(function(item,index)
+        {
+            document.getElementById("List1").innerHTML+=`<li>${item}</li>`
+        })
+        arr1.forEach(function(item)
+        {
+            document.getElementById("List2").innerHTML+=`<li>${item}</li>`
+        })
+        document.write("Length of city array is:"+arr1.length+"<br>")
+        document.write("sort array is:"+arr1.sort()+"<br>")
+        document.write("Reverse array is:"+arr1.reverse()+"<br>")
+        document.write("Reverse array is:"+arr2.reverse()+"<br>")
+        arr3.find(function(a)
+        {
+            if(a>40)
+            {
+                document.write(a+"<br>")
+            }
+        })
+        // arr3.find(function(a)
+        // {
+        //     if(a>40)
+        //     {
+        //         document.write(a+"<br>")
+        //     }
+        //     else
+        //     {
+        //         document.write("Element not found"+"<br>")
+        //     }
+        // })
+        let merge=arr2.concat(arr1)
+        document.write("Merging of two arrays:"+merge+"<br>")
+
+        let c=arr1.copyWithin(1,2)
+        document.write("Copied element are:"+c+"<br>")
+
+
+        // slice() method
+        let slc=arr1.slice(1,3)
+        document.write("Sliced array is:"+slc+"<br>")
+        let slc1=arr2.slice(2,4)
+        document.write("Sliced array is:"+slc1+"<br>")
+
+        // filter() method
+        arr3.filter(function(f)
+        {
+            if(f!=12)
+            {
+                document.write(f+"<br>")
+            }
+        })
+
+        // push() method
+        arr2.push("FFF")
+        document.write(arr2+"<br>")
+        arr2.push("GGG")
+        document.write(arr2+"<br>")
+
+        // pop() method
+        arr1.pop()
+        document.write(arr1+"<br>")
+
+        // splice() method
+        arr1.splice(1,0,"banglore","mumbai")
+        document.write(arr1+"<br>")
+        arr1.splice(1,1)
+        document.write(arr1+"<br>")
+
+
+        // some() method
+        const  ages=[3,10,18,20];
+        document.getElementById("demo").innerHTML=ages.some(checkAdult);
+        function checkAdult(age){
+            return age>18;
+        }
+
+        arr3.some(function(s)
+        {
+            if(s<50)
+            {
+                document.write(arr3+"<br>")
+            }
+        })
+
+        // using forloop 
+        for(i=0;i<arr2.length;i++)
+        {
+            document.write(arr2[i]+"<br>")
+        }
+    </script>
+</body>
+</html>
